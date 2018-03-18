@@ -2,6 +2,6 @@ import './Title.scss';
 
 export default {
   sayHello() {
-    console.log("Hello There!");
+    console.log("Hello World Again!");
   }
 };

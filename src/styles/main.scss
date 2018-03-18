@@ -1,4 +1,19 @@
-html, body {
-  margin: 0;
-  padding: 0;
+@import '/partials/_reset';
+@import '/modules/_utility';
+
+.container {
+  border: 5px solid yellow;
+  &-first,
+  &-second {
+    height: 50px;
+    width: 50%;
+  }
+  &-first {
+    background: red;
+    float: left;
+  }
+  &-second {
+    background: blue;
+    float: right;
+  }
 }

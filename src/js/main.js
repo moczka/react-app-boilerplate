@@ -1,6 +1,7 @@
-import Title from './react/components/Title/Title.js';
-import './../styles/main.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '_components/App.js';
+import '_styles/main.scss';
 
-Title.sayHello();
-
-export default {};
+const AppWrapper = document.querySelector('#app');
+ReactDOM.render(<App />, AppWrapper);
