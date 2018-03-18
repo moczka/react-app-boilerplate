@@ -18,7 +18,8 @@ module.exports = {
         alias: {
             _components: path.resolve(__dirname, 'src/js/react/components'),
             _utilities: path.resolve(__dirname, 'src/js/utilities'),
-            _styles: path.resolve(__dirname, 'src/styles')
+            _styles: path.resolve(__dirname, 'src/styles'),
+            _assets: path.resolve(__dirname, 'src/assets')
         },
         modules: [path.resolve(__dirname, "src/js"), "node_modules"]
     },
@@ -50,7 +51,7 @@ module.exports = {
                   })
             },
             {
-                test: /\.js$/,
+                test: /\.js$|\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -58,16 +59,12 @@ module.exports = {
                       presets: ["es2015", "react"]
                     }
                }
-            }, 
+            },
             {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                      presets: ["es2015", "react"]
-                    }
-               }
+                test: /\.(png|svg|jpg|gif)$|\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
+                ]
             }
         ]
     },
