@@ -17,6 +17,10 @@ module.exports = {
         /* Helps avoid absolute paths */
         alias: {
             _components: path.resolve(__dirname, 'src/js/react/components'),
+            _containers: path.resolve(__dirname, 'src/js/react/containers'),
+            _actions: path.resolve(__dirname, 'src/js/redux/actions'),
+            _reducers: path.resolve(__dirname, 'src/js/redux/reducers'),
+            _selectors: path.resolve(__dirname, 'src/js/redux/selectors'),
             _utilities: path.resolve(__dirname, 'src/js/utilities'),
             _styles: path.resolve(__dirname, 'src/styles'),
             _assets: path.resolve(__dirname, 'src/assets')

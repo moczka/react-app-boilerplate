@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 
 class App extends React.Component {
   render() {
+    const {pages} = this.props;
     return (
       <div>
         <Title text="Hello Javier!"/>
