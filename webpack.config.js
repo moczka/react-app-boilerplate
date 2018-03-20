@@ -12,6 +12,7 @@ module.exports = {
         /* Sets the output point directory (All of our build files go into it) */
         path: path.resolve(__dirname, 'dist')
     },
+    devtool: "source-map",
     resolve: {
         extensions: [".js", ".json"],
         /* Helps avoid absolute paths */
