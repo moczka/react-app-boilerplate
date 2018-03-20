@@ -6,7 +6,7 @@ module.exports = {
     mode: "development",
     /* Sets the entry point directory (All of our source files go into it) */
     context: path.resolve(__dirname, 'src'),
-    entry: './js/main.js',
+    entry: ["babel-polyfill", './js/main.js'],
     output: {
         filename: 'bundle.js',
         /* Sets the output point directory (All of our build files go into it) */
