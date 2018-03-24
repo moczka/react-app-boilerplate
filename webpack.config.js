@@ -1,6 +1,8 @@
 const path = require('path');
+/* Plugins */
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: "development",
@@ -22,6 +24,8 @@ module.exports = {
             _actions: path.resolve(__dirname, 'src/js/redux/actions'),
             _reducers: path.resolve(__dirname, 'src/js/redux/reducers'),
             _selectors: path.resolve(__dirname, 'src/js/redux/selectors'),
+            _store: path.resolve(__dirname, 'src/js/redux/store'),
+            _data: path.resolve(__dirname, 'src/data'),
             _utilities: path.resolve(__dirname, 'src/js/utilities'),
             _styles: path.resolve(__dirname, 'src/styles'),
             _assets: path.resolve(__dirname, 'src/assets')
@@ -80,7 +84,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html'
-        })
+        }),
+        /* Copies all the files in source directory assets to production */
+        new CopyWebpackPlugin([{
+            from: 'assets', to: 'assets'
+        }])
     ],
     /* Runs development server */
     devServer: {

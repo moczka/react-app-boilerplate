@@ -7,7 +7,7 @@ import App from '_components/App';
 //      > whenever state changes, the UserList will automatically re-render
 function mapStateToProps(state) {
   return {
-      pages: state.pages
+      photos: state.photos
   };
 }
 

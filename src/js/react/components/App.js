@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from '_components/Title/Title.js';
 import ReactLogo from '_assets/react-icon.png';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Image } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props){
@@ -15,7 +15,7 @@ class App extends React.Component {
     console.log("COmponent is about ot update");
   }
   render() {
-    const {pages} = this.props;
+    const {photos} = this.props;
     return (
       <div>
         <Title text="Hello Javier!"/>
@@ -30,7 +30,16 @@ class App extends React.Component {
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Hello world!!!!</p>
+            <h3>Here are the photos:</h3>
+            {
+              photos.map((photo) => {
+                return (
+                  <div className="App-thumbnails">
+                  <Image src={photo.src} responsive/>
+                  </div>
+                );
+              })
+            }
           </Modal.Body>
         </Modal>
       </div>
