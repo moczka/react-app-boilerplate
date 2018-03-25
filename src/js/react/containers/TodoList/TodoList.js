@@ -3,8 +3,6 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import TodoList from '_components/TodoList/TodoList';
 
-// Get apps state and pass it as props to UserList
-// Whenever state changes, the UserList will automatically re-render
 function mapStateToProps(state, containerProps) {
   return {
       header: containerProps.header,
@@ -12,4 +10,19 @@ function mapStateToProps(state, containerProps) {
   };
 }
 
-export default connect(mapStateToProps)(TodoList);
+function mapDispatchToProps(dispatch, state) {
+  return {
+    onDeleteTodo(id) {
+      return ((e) => {
+        dispatch({type: 'REMOVE_TODO', payload: {id}});
+      });
+    },
+    onCompleteTodo(id) {
+      return ((e) => {
+        dispatch({type: 'COMPLETE_TODO', payload: {id}});
+      });
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

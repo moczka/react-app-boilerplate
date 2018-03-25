@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import TodoList from '_containers/TodoList/TodoList';
+import AddTodo from '_containers/AddTodo/AddTodo';
 import Navbar from '_components/Navbar/Navbar';
 import './App.scss';
 
@@ -18,7 +19,12 @@ class App extends React.Component {
         <Navbar />
         <div className="App-wrapper">
           <Route exact path="/" render={(props) => {
-            return (<TodoList header="Active" completed={false} />);
+            return (
+              <div>
+                <AddTodo />
+                <TodoList header="Active" completed={false} />
+              </div>
+              );
           }} />
           <Route path="/completed" render={(props) => {
             return (<TodoList header="Completed" completed />);

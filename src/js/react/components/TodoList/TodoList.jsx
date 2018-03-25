@@ -8,7 +8,7 @@ const TodoList = (props) => {
       <h2>{props.header}</h2>
       <ul>
         {props.todos.map((todo) => {
-            return (<Todo key={todo.id} {...todo} />);
+            return (<Todo key={todo.id} {...todo} onComplete={props.onCompleteTodo(todo.id)} onDelete={props.onDeleteTodo(todo.id)} />);
         })}
       </ul>
     </div>

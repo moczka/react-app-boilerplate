@@ -2,15 +2,19 @@
 function selectPhoto(id) {
   return {
     type: 'SELECT_PHOTO',
-    id
+    payload: {
+      id
+    }
   };
 }
 
 // deselect photo
 function deselectPhoto(id) {
   return {
-    type: 'DESELECT_PHTO',
-    id
+    type: 'DESELECT_PHOTO',
+    payload: {
+      id
+    }
   };
 }
 

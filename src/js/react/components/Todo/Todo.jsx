@@ -7,6 +7,8 @@ const Todo = (props) => {
       <h3>{props.title}</h3>
       <span>{props.date}</span>
       <p>{props.description}</p>
+      <button onClick={props.onDelete}>Delete</button>
+      <button disabled={props.completed} onClick={props.onComplete}>Complete</button>
     </li>
   );
 }
@@ -14,6 +16,9 @@ const Todo = (props) => {
 Todo.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  completed: PropTypes.bool,
+  onDelete: PropTypes.func,
+  onComplete: PropTypes.func,
   date: PropTypes.string.isRequired
 };
 
