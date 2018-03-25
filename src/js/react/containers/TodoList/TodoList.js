@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import {getCompletedTodos, getActiveTodos} from '_selectors/todo_selectors';
+import {removeTodo, completeTodo} from '_actions/actionCreators';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import TodoList from '_components/TodoList/TodoList';
@@ -6,7 +7,7 @@ import TodoList from '_components/TodoList/TodoList';
 function mapStateToProps(state, containerProps) {
   return {
       header: containerProps.header,
-      todos: state.todos.filter((todo) => (todo.completed === containerProps.completed))
+      todos: containerProps.completed ? getCompletedTodos(state) : getActiveTodos(state)
   };
 }
 
@@ -14,12 +15,12 @@ function mapDispatchToProps(dispatch, state) {
   return {
     onDeleteTodo(id) {
       return ((e) => {
-        dispatch({type: 'REMOVE_TODO', payload: {id}});
+        dispatch(removeTodo(id));
       });
     },
     onCompleteTodo(id) {
       return ((e) => {
-        dispatch({type: 'COMPLETE_TODO', payload: {id}});
+        dispatch(completeTodo(id));
       });
     }
   }

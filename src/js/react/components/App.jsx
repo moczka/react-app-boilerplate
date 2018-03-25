@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import TodoList from '_containers/TodoList/TodoList';
-import AddTodo from '_containers/AddTodo/AddTodo';
+import ActivePage from '_components/Pages/Active';
+import CompletedPage from '_components/Pages/Completed';
 import Navbar from '_components/Navbar/Navbar';
 import './App.scss';
 
@@ -18,17 +18,8 @@ class App extends React.Component {
       <div className="App">
         <Navbar />
         <div className="App-wrapper">
-          <Route exact path="/" render={(props) => {
-            return (
-              <div>
-                <AddTodo />
-                <TodoList header="Active" completed={false} />
-              </div>
-              );
-          }} />
-          <Route path="/completed" render={(props) => {
-            return (<TodoList header="Completed" completed />);
-          }} />
+          <Route exact path="/" component={ActivePage} />
+          <Route path="/completed" component={CompletedPage} />
         </div>
       </div>
       </Router>

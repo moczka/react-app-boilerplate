@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import {addTodo} from '_actions/actionCreators';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import AddTodo from '_components/AddTodo/AddTodo';
@@ -12,7 +12,7 @@ function mapStateToProps(state, containerProps) {
 function mapDispatchToProps(dispatch) {
   return {
     onAddTodo(payload) {
-      dispatch({type: 'ADD_TODO', payload});
+      dispatch(addTodo(payload));
     }
   }
 }

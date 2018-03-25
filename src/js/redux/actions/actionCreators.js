@@ -1,17 +1,22 @@
-// select photo
-function selectPhoto(id) {
+function addTodo(payload) {
   return {
-    type: 'SELECT_PHOTO',
+    type: 'ADD_TODO',
+    payload
+  };
+}
+
+function removeTodo(id) {
+  return {
+    type: 'REMOVE_TODO',
     payload: {
       id
     }
   };
 }
 
-// deselect photo
-function deselectPhoto(id) {
+function completeTodo(id) {
   return {
-    type: 'DESELECT_PHOTO',
+    type: 'COMPLETE_TODO',
     payload: {
       id
     }
@@ -19,6 +24,7 @@ function deselectPhoto(id) {
 }
 
 export {
-  selectPhoto,
-  deselectPhoto
+  completeTodo,
+  removeTodo,
+  addTodo
 };
