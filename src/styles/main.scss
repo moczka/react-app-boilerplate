@@ -1,27 +1,3 @@
 @import '/partials/_reset';
 @import '/modules/_utility';
 @import '/bootstraps/bootstrap';
-
-.container {
-  border: 5px solid yellow;
-  &-first,
-  &-second {
-    height: 50px;
-    width: 50%;
-  }
-  &-first {
-    background: red;
-    float: left;
-  }
-  &-second {
-    background: blue;
-    float: right;
-  }
-}
-.App-thumbnails {
-  display: flex;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-content: center;
-}

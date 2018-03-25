@@ -4,8 +4,8 @@
   3) Return an updated copy of the state.
 */
 
-function photos(state = [], action) {
+function todos(state = {}, action) {
   return state;
 }
 
-export default photos;
+export default todos;

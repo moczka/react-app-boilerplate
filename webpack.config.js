@@ -16,7 +16,7 @@ module.exports = {
     },
     devtool: "source-map",
     resolve: {
-        extensions: [".js", ".json"],
+        extensions: [".js", ".jsx"],
         /* Helps avoid absolute paths */
         alias: {
             _components: path.resolve(__dirname, 'src/js/react/components'),

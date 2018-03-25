@@ -1,34 +1,32 @@
 const state = {
-  "photos": [
+  todos: [
     {
-      "src": "assets/gallery/basement-1.jpg",
-      "title": "Basement Remodeling",
-      "id": 123
+      title: "Wash dishes",
+      id: 1234,
+      description: "I need to wash dishes by 10pm!",
+      date: "03/23/18",
+      completed: false
     },
     {
-      "src": "assets/gallery/basement-2.jpg",
-      "title": "Basement Remodeling Before",
-      "id": 124
+      title: "Finish project for Brian",
+      id: 1235,
+      description: "I want to finish taht shit now!",
+      date: "03/23/18",
+      completed: false
     },
     {
-      "src": "assets/gallery/basement-3.jpg",
-      "title": "Basement Remodeling After",
-      "id": 125
+      title: "Learn Redux",
+      id: 1236,
+      description: "I need to wash dishes by 10pm!",
+      date: "03/23/18",
+      completed: false
     },
     {
-      "src": "assets/gallery/basement-4.jpg",
-      "title": "Basement Remodeling Despues",
-      "id": 126
-    },
-    {
-      "src": "assets/gallery/basement-5.jpg",
-      "title": "Basement Remodeling Later",
-      "id": 127
-    },
-    {
-      "src": "assets/gallery/basement-8.jpg",
-      "title": "Basement Remodeling Later Later",
-      "id": 128
+      title: "retire early",
+      id: 1237,
+      description: "I need to wash dishes by 10pm!",
+      date: "03/23/18",
+      completed: false
     }
   ]
 };
